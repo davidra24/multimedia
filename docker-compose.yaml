@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  api:
+    image: node:22
+    container_name: multimedia-app
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/public
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+      - MONGODB=mongodb://mongo:27017/multimedia
+      - JWT_SECRET=b0372a9f-d4a4-4023-894a-9b3228c46314
+      - STORAGE_API_KEY=AIzaSyAD58d5D0vcbkH4lufPPAiiBCVrwJS3Li4
+      - STORAGE_AUTH_DOMAIN=content-manager-188d6.firebaseapp.com
+      - STORAGE_PROJECT_ID=content-manager-188d6
+      - STORAGE_BUCKET=content-manager-188d6.appspot.com
+      - STORAGE_MESSAGE_SENDER=695005449120
+      - STORAGE_APP_ID=1:695005449120:web:b0943bcf636611d8a672c5
+      - STORAGE_MEASURE_ID=G-6VEP5VPHDS
+    ports:
+      - '${PORT}:${PORT}'
+    depends_on:
+      - mongo
+      - frontend
+    command: sh -c "npm install && npm run build && npm run start:prod"
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: multimedia
+    volumes:
+      - ./mongo:/data/db
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: react-frontend
+    working_dir: /frontend
+    volumes:
+      - ./frontend/build:/app/public
+    command: sh -c "npm install && npm run build && cp -r /frontend/build/* /app/public/"
+
+volumes:
+  frontend:
+  app:
