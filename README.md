@@ -34,3 +34,15 @@ Una vez hecho esto tendrá un usuario administrador y data inicial
 usuario: dramirez
 password: prueba2024
 ```
+
+## Levantar Front
+
+1. Ir a la carpeta frontend
+2. `yarn install`
+3. `yarn start`
+
+Ejecutar en
+
+```
+http://localhost:3000/api/seed
+```
