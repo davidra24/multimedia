@@ -1,11 +1,13 @@
+import { Outlet } from 'react-router-dom';
+import Navbar from './app/navbar';
+import { UserProvider } from './context/useAuth';
 import './styles/App.css';
 
-function App() {
+export const App = () => {
   return (
-    <div className='App-header'>
-      Hola mundo
-    </div>
+    <UserProvider>
+      <Navbar />
+      <Outlet />
+    </UserProvider>
   );
 }
-
-export default App;

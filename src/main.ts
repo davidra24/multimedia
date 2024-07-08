@@ -14,6 +14,8 @@ async function bootstrap() {
     }),
   );
 
+  app.enableCors();
+
   const config = new DocumentBuilder()
     .setTitle('Multimedia')
     .setDescription('Multimedia proyect by Disruptive Studio')

@@ -1,18 +1,12 @@
-import { IsString } from 'class-validator'
-
 export class CreateContentDto {
-    @IsString()
-    content_name: string
+  content_name: string;
 
-    @IsString()
-    author: string
+  author: string;
 
-    @IsString()
-    category: string
+  category: string;
 
-    @IsString()
-    topic: string
-    /* 
+  topic: string;
+  /* 
         @IsArray()
         files: Array<Express.Multer.File> */
 }

@@ -1,3 +1,4 @@
+import * as bcrypt from 'bcrypt';
 import { ValidRoles } from 'src/auth/interfaces';
 import { CategoryType } from 'src/categories/interfaces/category-type';
 
@@ -29,7 +30,7 @@ export const initialData: SeedData = {
   users_data: [
     {
       email: 'dramirez@gmail.com',
-      password: 'prueba2024',
+      password: bcrypt.hashSync('prueba2024', 10),
       username: 'dramirez',
       fullName: 'david ramirez',
       rol: ValidRoles.admin,

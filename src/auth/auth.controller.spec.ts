@@ -63,6 +63,7 @@ describe('AuthController', () => {
         isActive: Boolean(true),
         token:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODhkYzA3MGFhN2EwMjEyODFlMGZlYiIsImlhdCI6MTcyMDMzNjIyNywiZXhwIjoxNzIwNDIyNjI3fQ.tZ13ZbRm0y3gPYeiXtyrUZGh2FyjlJ3VS9Lbx6p824g',
+        rol: ValidRoles.admin,
       };
       jest.spyOn(authController, 'login').mockResolvedValue(mockResponse);
 

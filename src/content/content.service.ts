@@ -65,6 +65,7 @@ export class ContentService {
 
       return { content: saved, file };
     } catch (error) {
+      console.log(error);
       handleException(error);
     }
   }
@@ -89,7 +90,10 @@ export class ContentService {
         const image_cover = await this.fileService.downloadFile(
           content.image_cover,
         );
-        return { ...content.toObject(), image_cover };
+        const file = await this.fileService.downloadFile(
+          `${content.id}.${content.fileExtension}`,
+        );
+        return { ...content.toObject(), image_cover, file };
       }),
     );
 

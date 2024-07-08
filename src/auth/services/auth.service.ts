@@ -26,8 +26,13 @@ export class AuthService {
         ...userData,
         password: bcrypt.hashSync(password, 10),
       });
-      const { email, username, isActive } = user;
-      return { email, username, isActive };
+      const { username, isActive, rol, id } = user;
+      return {
+        username,
+        isActive,
+        rol,
+        token: this.getJWTToken({ id }),
+      };
     } catch (error) {
       throw new BadRequestException(
         `error desconocido vea el log ${error.code}`,
@@ -47,11 +52,12 @@ export class AuthService {
         'Credenciales inválidas o usuario desactivado',
       );
 
-    const { username, isActive } = user;
+    const { username, isActive, rol } = user;
 
     return {
       username,
       isActive,
+      rol,
       token: this.getJWTToken({ id: user._id }),
     };
   }

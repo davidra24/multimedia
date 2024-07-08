@@ -1,5 +1,8 @@
+import { ValidRoles } from './valid-roles';
+
 export interface CreatedUser {
-    email: string
-    username: string
-    isActive: boolean
+  username: string;
+  isActive: boolean;
+  rol: ValidRoles;
+  token: string;
 }
