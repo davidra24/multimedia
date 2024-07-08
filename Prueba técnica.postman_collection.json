@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "f6b88505-9ac6-4c70-b4de-60d91329d224",
+		"name": "Prueba técnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22238115"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "localhost:4000/api/auth/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dramirez2@gmail.com\",\n    \"password\": \"Skye123\",\n    \"username\":\"dramirez2\",\n    \"fullName\": \"david ramirez\",\n    \"rol\":\"lector\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dramirez@gmail.com\",\n    \"password\": \"Skye123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categorias",
+			"item": [
+				{
+					"name": "localhost:4000/api/categories/videos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\": \"texto\",\r\n    \"category_type\": \"text\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/categories/video",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\": \"txt\",\r\n    \"category_type\": \"file\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/categories/txt",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"categories",
+								"txt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/categories/66877f44d11805fc7fed9dfd",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODc0MDRkZjk4YjZmMDE2YmI5NjU4NSIsImlhdCI6MTcyMDE1MzMxMywiZXhwIjoxNzIwMTYwNTEzfQ.UmRzDcJfa104nukUDwR7RkqaxreHTpR_TyKag0EOCAM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/categories/66877f44d11805fc7fed9dfd",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"categories",
+								"66877f44d11805fc7fed9dfd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "topic",
+			"item": [
+				{
+					"name": "localhost:4000/api/topic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/topic",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/topic",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topic_name\": \"deporte\",\r\n    \"categories\": [\"imagenes\", \"url\", \"videos\", \"documentos\", \"imagenes\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/topic",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/topic/matematicas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/topic/deportes",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic",
+								"deportes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/topic/6688d2f34f68a98433736bf0",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/topic/6688d2f34f68a98433736bf0",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic",
+								"6688d2f34f68a98433736bf0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/topic/deportes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topic_name\": \"deportes\",\r\n    \"categories\": [\"imagenes\", \"url\", \"documentos\", \"url\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/topic/deportes",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic",
+								"deportes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "localhost:4000/api/files/download/fe19070e-356e-4819-8af3-86d1f9a9ca1c.jpeg",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/files/download/fe19070e-356e-4819-8af3-86d1f9a9ca1c.jpeg",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"files",
+								"download",
+								"fe19070e-356e-4819-8af3-86d1f9a9ca1c.jpeg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/files/upload/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Imágenes/Estructura_del_estado_Colombia.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:4000/api/files/upload/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"files",
+								"upload",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "content",
+			"item": [
+				{
+					"name": "localhost:4000/api/content",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content_name",
+									"value": "Lo que sea",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "dramirez",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "videos",
+									"type": "text"
+								},
+								{
+									"key": "topic",
+									"value": "deportes",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"type": "file",
+									"src": "/D:/Imágenes/trasera 1010.jpg"
+								},
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/C:/Users/davic/OneDrive/Imágenes/Capturas de pantalla/Captura de pantalla 2024-06-29 104231.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:4000/api/content",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"content"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/content",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/content",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"content"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/content/668a236c887acc89b75a6ad3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/content/668a287a8411ae8f823d57f8",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"content",
+								"668a287a8411ae8f823d57f8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/content/668a287a8411ae8f823d57f8",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/content/668a287a8411ae8f823d57f8",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"content",
+								"668a287a8411ae8f823d57f8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/api/content",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content_name",
+									"value": "Actualizado",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "dramirez",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "videos",
+									"type": "text"
+								},
+								{
+									"key": "topic",
+									"value": "deportes",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"type": "file",
+									"src": "/D:/Escritorio/David Ramirez Curriculum Vitae.pdf"
+								},
+								{
+									"key": "cover",
+									"type": "file",
+									"src": "/C:/Users/davic/OneDrive/Imágenes/Capturas de pantalla/Captura de pantalla 2024-06-29 104231.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:4000/api/content/668a40eae8a8616f2cc4471a",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"content",
+								"668a40eae8a8616f2cc4471a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "seed",
+			"item": [
+				{
+					"name": "localhost:4000/api/seed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/seed",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ODhkYzA3MGFhN2EwMjEyODFlMGZlYiIsImlhdCI6MTcyMDI0NTI2MCwiZXhwIjoxNzIwMjUyNDYwfQ.jmpGbpjVrig7F5v_Bqbd_7zJ-DnbSdX_JOFPn6NaOw0",
+			"type": "string"
+		}
+	]
+}

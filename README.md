@@ -46,3 +46,5 @@ Ejecutar en
 ```
 http://localhost:3000/api/seed
 ```
+
+## Se adjunta postman collection
